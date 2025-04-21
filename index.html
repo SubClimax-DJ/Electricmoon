@@ -27,7 +27,18 @@
             overflow-x: hidden;
         }
 
-      <body style="background-image: url('images/background.jpg');">
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+           background-image: url('images/background.jpg');
+            background-size: cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
 
         .grain {
             position: fixed;
@@ -138,15 +149,15 @@
         /* Hero Section */
         .hero {
             height: 70vh;
-             min-height: 500px;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             text-align: center;
-             position: relative;
-             overflow: hidden;
-             background: url('./images/hero.jpg') no-repeat center center;
-             background-size: cover;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: url('./images/hero.jpg') no-repeat center center;
+            background-size: cover;
         }
 
         .hero::before {
@@ -934,6 +945,9 @@
             </div>
             <div class="copyright">© 2025 Electric Moon. All rights reserved.</div>
         </div>
+    </footer>
+</body>
+</html>
     </footer>
 </body>
 </html>
