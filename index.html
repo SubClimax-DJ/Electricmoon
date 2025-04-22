@@ -614,32 +614,83 @@
           margin-top: 20px; /* optional */
         }
       </style>
-      
-<div class="video-row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-  <!-- Local Video -->
-  <div class="video-wrapper">
-    <video width="640" height="360" controls>
-      <source src="images/Emoon.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+
+     <!-- Video Section -->
+    
+<section id="video-showcase" class="video-showcase" style="padding: 60px 0; background: radial-gradient(circle at top left, #1a0033, #000); color: #fff;">
+  <div class="container" style="text-align: center; max-width: 1200px; margin: auto;">
+    <h2 class="glow-title">Live Visuals in Action</h2>
+    <p style="font-size: 1.2rem; color: #ccc; margin-bottom: 50px;">
+      See the light shows, laser setups, and stage energy that Electric Moon brings to life — from gritty clubs to polished ballrooms.
+    </p>
+
+    <div class="video-row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
+      <!-- Local Video -->
+      <div class="video-wrapper">
+        <video width="320" height="180" muted controls onmouseover="this.play()" onmouseout="this.pause(); this.currentTime=0;"
+          style="border-radius: 12px; box-shadow: 0 0 25px rgba(255, 255, 255, 0.1); transition: transform 0.3s, box-shadow 0.3s;">
+          <source src="images/Emoon.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- YouTube Video #1 -->
+      <div class="video-wrapper">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/1O6VKF723UI?start=462"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="border-radius: 12px; box-shadow: 0 0 25px rgba(255, 0, 255, 0.25); transition: transform 0.3s, box-shadow 0.3s;"></iframe>
+      </div>
+
+      <!-- YouTube Video #2 -->
+      <div class="video-wrapper">
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/zbY2kjkWHCs"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          style="border-radius: 12px; box-shadow: 0 0 25px rgba(0, 255, 255, 0.25); transition: transform 0.3s, box-shadow 0.3s;"></iframe>
+      </div>
+    </div>
   </div>
 
-  <!-- YouTube Video #1 -->
-  <div class="video-wrapper">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/1O6VKF723UI?start=462"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen></iframe>
-  </div>
+  <style>
+    .video-wrapper:hover video,
+    .video-wrapper:hover iframe {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
+    }
 
-  <!-- YouTube Video #2 -->
-  <div class="video-wrapper">
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/zbY2kjkWHCs"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen></iframe>
-  </div>
-</div>
+    .glow-title {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad, 0 0 30px #9b59b6;
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad, 0 0 30px #9b59b6;
+      }
+      50% {
+        text-shadow: 0 0 20px #d633ff, 0 0 30px #d633ff, 0 0 40px #ff66ff;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .video-wrapper {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      iframe, video {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  </style>
+</section>
     
     <!-- About Section -->
 <section id="about" class="about">
