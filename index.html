@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electric Moon</title>
+    <meta name="description" content="Electric Moon creates immersive live light and laser shows for bands and venues, elevating performances with custom visual experiences.">
     <style>
         /* Color Palette */
         :root {
@@ -156,7 +157,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-           background: url('./images/Hero.jpg') no-repeat center center;
+            background: url('./images/Hero.jpg') no-repeat center center;
             background-size: cover;
         }
 
@@ -192,6 +193,66 @@
             max-width: 600px;
             margin: 0 auto 2rem;
             color: var(--moonbeam-cream);
+        }
+
+        /* Video Section */
+        .video-showcase {
+            padding: 60px 0;
+            background: radial-gradient(circle at top left, #1a0033, #000);
+            color: #fff;
+            text-align: center;
+        }
+
+        .video-showcase .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .glow-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad, 0 0 30px #9b59b6;
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad, 0 0 30px #9b59b6;
+            }
+            50% {
+                text-shadow: 0 0 20px #d633ff, 0 0 30px #d633ff, 0 0 40px #ff66ff;
+            }
+        }
+
+        .video-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .video-wrapper {
+            flex: 0 1 calc(33% - 24px); /* Roughly three videos per row on larger screens */
+            max-width: 320px;
+        }
+
+        .video-wrapper:hover video,
+        .video-wrapper:hover iframe {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
+        }
+
+        iframe, video {
+            width: 100% !important;
+            height: auto !important;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        video {
+            cursor: pointer;
         }
 
         /* About Section */
@@ -255,12 +316,39 @@
             z-index: 1;
         }
 
-        /* Music Section */
+        /* Venue Lighting Section */
+        .venues {
+            background-color: rgba(80, 99, 86, 0.9);
+        }
 
+        .venue-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .venue-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .venue-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-image: url('./images/venue.jpg'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
 
         /* Gallery Section */
         .gallery {
-            background-color: rgba(80, 99, 86, 0.9);
+            background-color: rgba(30, 61, 89, 0.9);
             overflow: hidden;
         }
 
@@ -270,93 +358,15 @@
             gap: 20px;
         }
 
-        .gallery-item-1 {
-            height: 250px;
-            background-image: url('./images/gallery1.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item-2 {
-            height: 250px;
-            background-image: url('./images/gallery2.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item-3 {
-            height: 250px;
-            background-image: url('./images/gallery3.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item-4 {
-            height: 250px;
-            background-image: url('./images/gallery4.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item-5 {
-            height: 250px;
-            background-image: url('./images/gallery5.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item-6 {
-            height: 250px;
-            background-image: url('./images/gallery6.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item-7 {
-            height: 250px;
-            background-image: url('./images/gallery7.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
+        .gallery-item-1,
+        .gallery-item-2,
+        .gallery-item-3,
+        .gallery-item-4,
+        .gallery-item-5,
+        .gallery-item-6,
+        .gallery-item-7,
         .gallery-item-8 {
             height: 250px;
-            background-image: url('./images/gallery8.jpg');
             background-size: cover;
             background-position: center;
             border-radius: 10px;
@@ -365,6 +375,15 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
+
+        .gallery-item-1 { background-image: url('./images/gallery1.jpg'); }
+        .gallery-item-2 { background-image: url('./images/gallery2.jpg'); }
+        .gallery-item-3 { background-image: url('./images/gallery3.jpg'); }
+        .gallery-item-4 { background-image: url('./images/gallery4.jpg'); }
+        .gallery-item-5 { background-image: url('./images/gallery5.jpg'); }
+        .gallery-item-6 { background-image: url('./images/gallery6.jpg'); }
+        .gallery-item-7 { background-image: url('./images/gallery7.jpg'); }
+        .gallery-item-8 { background-image: url('./images/gallery8.jpg'); }
 
         .gallery-item-1:hover,
         .gallery-item-2:hover,
@@ -400,384 +419,3 @@
         .gallery-item-2:hover::before,
         .gallery-item-3:hover::before,
         .gallery-item-4:hover::before,
-        .gallery-item-5:hover::before,
-        .gallery-item-6:hover::before,
-        .gallery-item-7:hover::before,
-        .gallery-item-8:hover::before {
-            opacity: 1;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: rgba(30, 61, 89, 0.9);
-            text-align: center;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border-radius: 5px;
-            border: none;
-            background-color: rgba(245, 245, 240, 0.1);
-            color: var(--moonbeam-cream);
-            font-size: 1rem;
-        }
-
-        .form-control::placeholder {
-            color: rgba(245, 245, 240, 0.5);
-        }
-
-        .submit-btn {
-            background-color: var(--electric-ember);
-            color: var(--moonbeam-cream);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: inline-block;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--neon-magenta);
-        }
-
-        /* Social Media */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(245, 245, 240, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--moonbeam-cream);
-            font-size: 1.2rem;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .social-link:hover {
-            background-color: var(--electric-ember);
-            transform: translateY(-5px);
-        }
-
-        /* Footer */
-        footer {
-            background-color: rgba(30, 61, 89, 1);
-            padding: 30px 0;
-            text-align: center;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--electric-ember), var(--neon-magenta));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .footer-nav a {
-            color: var(--moonbeam-cream);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-nav a:hover {
-            color: var(--electric-ember);
-        }
-
-        .copyright {
-            font-size: 0.9rem;
-            color: rgba(245, 245, 240, 0.5);
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .about-content {
-                flex-direction: column;
-            }
-
-            .about-image {
-                width: 100%;
-            }
-
-            .date, .venue, .tickets {
-                width: 100%;
-                text-align: left;
-                padding: 5px 0;
-            }
-
-            .tickets {
-                margin-top: 10px;
-            }
-
-            nav ul {
-                gap: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .band-name {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="grain"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo-container">
-                <div class="logo">
-                    <div class="moon"></div>
-                </div>
-                <div class="band-name">Electric Moon</div>
-            </div>
-<nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#video-showcase">Live Visuals</a></li>
-        <li><a href="#venues">Venue Lighting</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Electric Moon</h1>
-            <p>creates live light and laser shows that elevate bands beyond the stage</p>
-            <p>+ Custom lighting based on venue or band's preference/p>
-        </div>
-    </section>
-    <style>
-        .center-video {
-          text-align: center;
-          margin-top: 20px; /* optional */
-        }
-      </style>
-
-     <!-- Video Section -->
-    
-<section id="video-showcase" class="video-showcase" style="padding: 60px 0; background: radial-gradient(circle at top left, #1a0033, #000); color: #fff;">
-  <div class="container" style="text-align: center; max-width: 1200px; margin: auto;">
-    <h2 class="glow-title">Live Visuals in Action</h2>
-    <p style="font-size: 1.2rem; color: #ccc; margin-bottom: 50px;">
-      See the light shows, laser setups, and stage energy that Electric Moon brings to life — from gritty clubs to polished ballrooms.
-    </p>
-
-    <div class="video-row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;">
-      <!-- Local Video -->
-      <div class="video-wrapper">
-        <video width="320" height="180" muted controls onmouseover="this.play()" onmouseout="this.pause(); this.currentTime=0;"
-          style="border-radius: 12px; box-shadow: 0 0 25px rgba(255, 255, 255, 0.1); transition: transform 0.3s, box-shadow 0.3s;">
-          <source src="images/Emoon.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <!-- YouTube Video #1 -->
-      <div class="video-wrapper">
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/1O6VKF723UI?start=462"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          style="border-radius: 12px; box-shadow: 0 0 25px rgba(255, 0, 255, 0.25); transition: transform 0.3s, box-shadow 0.3s;"></iframe>
-      </div>
-
-      <!-- YouTube Video #2 -->
-      <div class="video-wrapper">
-        <iframe width="320" height="180" src="https://www.youtube.com/embed/zbY2kjkWHCs"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          style="border-radius: 12px; box-shadow: 0 0 25px rgba(0, 255, 255, 0.25); transition: transform 0.3s, box-shadow 0.3s;"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    .video-wrapper:hover video,
-    .video-wrapper:hover iframe {
-      transform: scale(1.05);
-      box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
-    }
-
-    .glow-title {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      color: #fff;
-      text-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad, 0 0 30px #9b59b6;
-      animation: pulseGlow 3s ease-in-out infinite;
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% {
-        text-shadow: 0 0 10px #8e44ad, 0 0 20px #8e44ad, 0 0 30px #9b59b6;
-      }
-      50% {
-        text-shadow: 0 0 20px #d633ff, 0 0 30px #d633ff, 0 0 40px #ff66ff;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .video-wrapper {
-        flex: 1 1 100%;
-        max-width: 100%;
-      }
-
-      iframe, video {
-        width: 100% !important;
-        height: auto !important;
-      }
-    }
-  </style>
-</section>
-    
-    <!-- About Section -->
-<section id="about" class="about">
-    <div class="container">
-        <h2 class="section-title">Our Story</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    <strong>Electric Moon</strong> creates live light and laser shows that elevate bands beyond the stage — into full-blown sonic galaxies. Born under the stars and raised by the waves, our lighting is fueled by rhythm, color, and the raw energy of live music.
-                </p>
-                <p>
-                    We’re not just flipping switches — we’re crafting atmospheres. From folk-inspired sets to extended jam sessions, our lighting evolves with the music, amplifying every crescendo with immersive visuals, swirling beams, and lunar-level vibes.
-                </p>
-                <p>
-                    Whether you're a band looking to trip the lights fantastic or a venue chasing that extra spark, <strong>Electric Moon</strong> is here to drift, pulse, and launch your live show into orbit.
-                </p>
-            </div>
-            <div class="about-image"></div>
-        </div>
-    </div>
-</section>
-<section id="venues" class="venues">
-    <div class="container">
-        <h2 class="section-title">Venue Lighting</h2>
-        <div class="venue-content">
-            <div class="venue-text">
-                <p>
-                    <strong>Electric Moon</strong> doesn’t just light up bands — we light up the whole space. Whether it’s a gritty rock stage, an intimate listening room, or a polished ballroom, we bring immersive lighting design tailored to the mood, energy, and heartbeat of your event.
-                </p>
-                <p>
-                    We handle everything from custom stage setups and synchronized light shows to ambient uplighting and full-room transformations. Our gear is pro-grade. Our touch is artistic. Our goal? To make every performance and party unforgettable.
-                </p>
-                <p>
-                    From soundcheck to encore, from first dance to final toast — we’ve got the lights that move with the music and match the moment.
-                </p>
-                <p>
-                    Let <strong>Electric Moon</strong> bring your venue to life with beams, color, texture, and motion. Because when the lights are right, the vibe is unstoppable.
-                </p>
-            </div>
-            <div class="venue-image"></div>
-        </div>
-    </div>
-</section>
-
-    <!-- Music Section -->
-
-
-    <!-- Tour Section -->
-
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item-1"></div>
-                <div class="gallery-item-2"></div>
-                <div class="gallery-item-3"></div>
-                <div class="gallery-item-4"></div>
-                <div class="gallery-item-5"></div>
-                <div class="gallery-item-6"></div>
-                <div class="gallery-item-7"></div>
-                <div class="gallery-item-8"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">info@subclimax.com 214.810.6337</h2>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-logo">Electric Moon</div>
-            <div class="footer-nav">
-                <a href="#about">About</a>
-                <a href="#music">Music</a>
-                <a href="#tour">Tour</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="copyright">© 2025 Electric Moon. All rights reserved.</div>
-        </div>
-    </footer>
-</body>
-</html>
