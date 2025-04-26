@@ -408,78 +408,35 @@
         }
 
         /* Contact Section */
-        .contact {
-            background-color: rgba(30, 61, 89, 0.9);
-            text-align: center;
-        }
+       /* Contact Section */
+.contact-styled {
+    background-color: rgba(30, 61, 89, 0.95); /* Slightly darker background */
+    text-align: center;
+    padding: 80px 0; /* Increased padding for more prominence */
+}
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.contact-title {
+    color: var(--electric-ember); /* Use a vibrant color for the title */
+    margin-bottom: 30px;
+}
 
-        .form-group {
-            margin-bottom: 20px;
-        }
+.contact-info {
+    font-size: 1.2rem;
+}
 
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border-radius: 5px;
-            border: none;
-            background-color: rgba(245, 245, 240, 0.1);
-            color: var(--moonbeam-cream);
-            font-size: 1rem;
-        }
+.contact-link {
+    color: var(--moonbeam-cream);
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-        .form-control::placeholder {
-            color: rgba(245, 245, 240, 0.5);
-        }
+.contact-link:hover {
+    color: var(--neon-magenta);
+}
 
-        .submit-btn {
-            background-color: var(--electric-ember);
-            color: var(--moonbeam-cream);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: inline-block;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--neon-magenta);
-        }
-
-        /* Social Media */
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(245, 245, 240, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--moonbeam-cream);
-            font-size: 1.2rem;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .social-link:hover {
-            background-color: var(--electric-ember);
-            transform: translateY(-5px);
-        }
+.contact-info p {
+    margin-bottom: 15px;
+}
 
         /* Footer */
         footer {
@@ -759,23 +716,28 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">info@subclimax.com 214.810.6337</h2>
+<section id="contact" class="contact-styled">
+    <div class="container">
+        <h2 class="section-title contact-title">Get In Touch</h2>
+        <div class="contact-info">
+            <p><a href="mailto:info@subclimax.com" class="contact-link">info@subclimax.com</a></p>
+            <p><a href="tel:2148106337" class="contact-link">214.810.6337</a></p>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-logo">Electric Moon</div>
             <div class="footer-nav">
-                <a href="#about">About</a>
-                <a href="#music">Music</a>
-                <a href="#tour">Tour</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <li><a href="#about">About</a></li>
+        <li><a href="#video-showcase">Live Visuals</a></li>
+        <li><a href="#venues">Venue Lighting</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+        </div>
             <div class="copyright">© 2025 Electric Moon. All rights reserved.</div>
         </div>
     </footer>
